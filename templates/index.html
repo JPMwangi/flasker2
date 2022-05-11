@@ -1,0 +1,21 @@
+<h1>Hello world.</h1>
+<h2>Hi, my name is {{ name|upper }}</h2>
+<p>This is my first webpage.</p>
+
+<!-- using SAFE filter executes the html code passed from python file. -->
+<p>Using safe. {{ stuff|safe }}</p>
+
+<!-- using STRIPTAG filter will remove any html elements(strip) -->
+<p>Using striptags {{ stuff|striptags }}</p>
+
+<h3>Favorite Pizza</h3>
+
+{% for topping in favorite_pizza %}
+	<ul>
+		{% if topping == 43 %}
+			<li>{{ topping + 100 }}</li>
+		{% else %}
+			<li>{{ topping }}</li>
+		{% endif %}
+	</ul>
+{% endfor %}
